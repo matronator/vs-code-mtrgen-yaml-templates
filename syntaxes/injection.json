@@ -1,6 +1,6 @@
 {
     "scopeName": "variable.template.injection",
-    "injectionSelector": "source.yaml, source.json, source.neon",
+    "injectionSelector": "L:source.yaml, L:source.json, L:source.neon",
     "patterns": [
         {
             "include": "#variables"

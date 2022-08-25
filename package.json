@@ -2,7 +2,7 @@
     "name": "mtrgen-yaml-templates",
     "displayName": "MTRGen Templates Syntax Highlighting",
     "description": "Provides syntax support for YAML templates used by MTRGen (matronator/generator on composer).",
-    "version": "1.0.2",
+    "version": "1.1.0",
     "engines": {
         "vscode": "^1.55.0"
     },
@@ -17,6 +17,54 @@
                 "path": "./syntaxes/injection.json",
                 "scopeName": "variable.template.injection",
                 "injectTo": ["source.yaml", "source.json", "source.neon"]
+            }
+        ],
+        "jsonValidation": [
+            {
+                "fileMatch": [".template.yaml", ".template.yml", ".template.json", ".template.neon"],
+                "url": "./mtrgen-template-schema.json"
+            }
+        ],
+        "languages": [
+            {
+                "id": "json",
+                "aliases": [
+                    "JSON",
+                    "json"
+                ],
+                "extensions": [
+                    ".json",
+                    ".bowerrc",
+                    ".jshintrc",
+                    ".jscsrc",
+                    ".eslintrc",
+                    ".babelrc",
+                    ".webmanifest",
+                    ".code-workspace"
+                ],
+                "mimetypes": [
+                    "application/json",
+                    "application/manifest+json"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "yaml",
+                "aliases": ["YAML", "yaml"],
+                "extensions": [".eyaml", ".eyml", ".yaml", ".yml"],
+                "firstLine": "^#cloud-config",
+                "configuration": "./yaml/language-configuration.json"
+            },
+            {
+                "id": "neon",
+                "aliases": [
+                    "Neon",
+                    "neon"
+                ],
+                "extensions": [
+                    ".neon"
+                ],
+                "configuration": "./neon/language-configuration.json"
             }
         ]
     },
@@ -37,6 +85,38 @@
     "keywords": [
         "yaml", "yaml template", "templates", "templating", "mtrgen", "matronator"
     ],
-    "license": "LICENSE.md",
-    "icon": "icon.png"
+    "license": "SEE LICENSE IN LICENSE.md",
+    "icon": "icon-256.png",
+    "sponsor": [
+        {
+            "url": "https://www.patreon.com/bePatron?u=34136375"
+        },
+        {
+            "url": "https://www.paypal.com/paypalme/matronator"
+        },
+        {
+            "url": "https://ko-fi.com/matronator"
+        },
+        {
+            "url": "https://github.com/sponsors/matronator"
+        }
+    ],
+    "funding": [
+        {
+            "type": "patreon",
+            "url": "https://www.patreon.com/bePatron?u=34136375"
+        },
+        {
+            "type": "paypal",
+            "url": "https://www.paypal.com/paypalme/matronator"
+        },
+        {
+            "type": "ko-fi",
+            "url": "https://ko-fi.com/matronator"
+        },
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/matronator"
+        }
+    ]
 }
