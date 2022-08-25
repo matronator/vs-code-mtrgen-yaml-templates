@@ -1,0 +1,19 @@
+{
+    "scopeName": "variable.template.injection",
+    "injectionSelector": "source.yaml, source.json, source.neon",
+    "patterns": [
+        {
+            "include": "#variables"
+        }
+    ],
+    "repository": {
+        "variables": {
+            "patterns": [
+				{
+					"match": "\\<%\\s?[a-zA-Z0-9_]+?\\s?%\\>",
+                    "name": "variable.name"
+				}
+			]
+        }
+    }
+}
