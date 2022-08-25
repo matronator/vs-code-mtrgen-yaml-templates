@@ -1,10 +1,10 @@
 {
     "name": "mtrgen-yaml-templates",
-    "displayName": "MTRGen YAML Templates",
+    "displayName": "MTRGen Templates Syntax Highlighting",
     "description": "Provides syntax support for YAML templates used by MTRGen (matronator/generator on composer).",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "engines": {
-        "vscode": "^1.70.0"
+        "vscode": "^1.55.0"
     },
     "categories": [
         "Programming Languages",
@@ -20,13 +20,28 @@
             }
         ]
     },
+    "publisher": "Matronator",
     "author": {
         "name": "Matronator",
         "url": "https://matronator.com"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/matronator/vs-code-mtrgen-yaml-templates.git"
+    },
+    "badges": [],
+    "galleryBanner": {
+        "color": "#bb0000",
+        "theme": "dark"
+    },
+    "activationEvents": [
+        "onLanguage:yaml",
+        "onLanguage:json",
+        "onLanguage:neon"
+    ],
     "keywords": [
         "yaml", "yaml template", "templates", "templating", "mtrgen", "matronator"
     ],
-    "license": "MIT",
+    "license": "LICENSE.md",
     "icon": "icon.png"
 }
