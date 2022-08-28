@@ -2,7 +2,7 @@
     "name": "mtrgen-yaml-templates",
     "displayName": "MTRGen Templates Syntax Highlighting",
     "description": "Provides syntax support for YAML templates used by MTRGen (matronator/generator on composer).",
-    "version": "1.1.0",
+    "version": "1.1.2",
     "engines": {
         "vscode": "^1.55.0"
     },
@@ -22,7 +22,7 @@
         "jsonValidation": [
             {
                 "fileMatch": [".template.yaml", ".template.yml", ".template.json", ".template.neon"],
-                "url": "./mtrgen-template-schema.json"
+                "url": "https://files.matronator.com/public/mtrgen/1.0.1/mtrgen-template-schema.json"
             }
         ],
         "languages": [

@@ -10,8 +10,12 @@
         "variables": {
             "patterns": [
 				{
-					"match": "\\<%\\s?[a-zA-Z0-9_]+?\\s?%\\>",
-                    "name": "variable.name"
+					"match": "\\<%\\s?([a-zA-Z0-9_]+?)(\\|[a-zA-Z0-9_]+?)?\\s?%\\>",
+                    "name": "variable.name",
+                    "captures": {
+                        "1": { "name": "variable.name" },
+                        "2": { "name": "keyword" }
+                    }
 				}
 			]
         }
