@@ -1,8 +1,8 @@
 {
     "name": "mtrgen-yaml-templates",
     "displayName": "MTRGen Templates Syntax Highlighting",
-    "description": "Provides syntax support for YAML templates used by MTRGen (matronator/generator on composer).",
-    "version": "1.1.2",
+    "description": "Provides syntax support for YAML templates used by MTRGen and Pars'Em.",
+    "version": "1.1.3",
     "engines": {
         "vscode": "^1.55.0"
     },
@@ -87,20 +87,9 @@
     ],
     "license": "SEE LICENSE IN LICENSE.md",
     "icon": "icon-256.png",
-    "sponsor": [
-        {
-            "url": "https://www.patreon.com/bePatron?u=34136375"
-        },
-        {
-            "url": "https://www.paypal.com/paypalme/matronator"
-        },
-        {
-            "url": "https://ko-fi.com/matronator"
-        },
-        {
-            "url": "https://github.com/sponsors/matronator"
-        }
-    ],
+    "sponsor": {
+        "url": "https://github.com/sponsors/matronator"
+    },
     "funding": [
         {
             "type": "patreon",
