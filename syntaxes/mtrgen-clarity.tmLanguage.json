@@ -1,0 +1,14 @@
+{
+  "name": "mtrgen-clarity",
+  "scopeName": "source.clarity.mtrgen",
+  "comment": "MTRGen Clarity Templates",
+  "fileTypes": ["clar.mtr", "clarity.mtr"],
+  "patterns": [
+    {
+      "include": "source.mtrgen"
+    },
+    {
+      "include": "source.clarity"
+    }
+  ]
+}

@@ -2,7 +2,7 @@
     "name": "mtrgen-yaml-templates",
     "displayName": "MTRGen Templates Syntax Highlighting",
     "description": "Provides syntax support for YAML templates used by MTRGen and Pars'Em.",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "engines": {
         "vscode": "^1.55.0"
     },
@@ -190,6 +190,11 @@
                 "language": "mtrgen-rust",
                 "scopeName": "source.rust.mtrgen",
                 "path": "./syntaxes/mtrgen-rust.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen-clarity",
+                "scopeName": "source.clarity.mtrgen",
+                "path": "./syntaxes/mtrgen-clarity.tmLanguage.json"
               }
         ],
         "languages": [
@@ -585,6 +590,18 @@
                 ],
                 "extensions": [
                     ".go.mtr"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "mtrgen-clarity",
+                "aliases": [
+                    "MTRGen Clarity",
+                    "mtrgen-clarity"
+                ],
+                "extensions": [
+                    ".clar.mtr",
+                    ".clarity.mtr"
                 ],
                 "configuration": "./language-configuration.json"
             }
