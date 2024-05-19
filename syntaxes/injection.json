@@ -1,6 +1,6 @@
 {
     "scopeName": "variable.template.injection",
-    "injectionSelector": "L:source.yaml, L:source.json, L:source.neon, L:source.go, L:source.php, L:source.rust, L:source.js, L:source.ts, L:source.css, L:text.html.basic, L:source.cpp, L:source.haxe, L:source.c, L:source.java, L:source.python, L:source.cython, L:source.shell, L:source.cisco, L:source.dockerfile, L:source.groovy, L:source.lua, L:text.html.markdown, L:source.nginx, L:source.ini, L:source.ruby, L:source.sql, L:source.terraform, L:source.toml, L:source.nim, L:source.perl, L:source.clarity, L:text.xml",
+    "injectionSelector": "L:source.yaml, L:source.json, L:source.neon, L:source.go, L:source.php, L:source.rust, L:source.js, L:source.ts, L:source.css, L:text.html.basic, L:source.cpp, L:source.haxe, L:source.c, L:source.java, L:source.python, L:source.cython, L:source.shell, L:source.cisco, L:source.dockerfile, L:source.groovy, L:source.lua, L:text.html.markdown, L:source.nginx, L:source.ini, L:source.ruby, L:source.sql, L:source.terraform, L:source.toml, L:source.nim, L:source.perl, L:source.clar, L:text.xml",
     "patterns": [
         {
             "include": "#variables"
