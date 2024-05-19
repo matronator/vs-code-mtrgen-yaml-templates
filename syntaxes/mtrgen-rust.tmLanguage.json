@@ -1,0 +1,13 @@
+{
+  "name": "mtrgen-rust",
+  "scopeName": "source.rust.mtrgen",
+  "comment": "MTRGen Rust Templates",
+  "patterns": [
+    {
+      "include": "source.mtrgen"
+    },
+    {
+      "include": "source.rust"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "mtrgen-cpp",
+  "scopeName": "source.cpp.mtrgen",
+  "comment": "MTRGen C++ Templates",
+  "patterns": [
+    {
+      "include": "source.mtrgen"
+    },
+    {
+      "include": "source.cpp"
+    }
+  ]
+}

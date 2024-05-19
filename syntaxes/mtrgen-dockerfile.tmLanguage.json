@@ -1,0 +1,13 @@
+{
+  "name": "mtrgen-dockerfile",
+  "scopeName": "source.dockerfile.mtrgen",
+  "comment": "MTRGen Dockerfile Templates",
+  "patterns": [
+    {
+      "include": "source.mtrgen"
+    },
+    {
+      "include": "source.dockerfile"
+    }
+  ]
+}

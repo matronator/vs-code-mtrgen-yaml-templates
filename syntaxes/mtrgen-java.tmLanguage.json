@@ -1,0 +1,13 @@
+{
+  "name": "mtrgen-java",
+  "scopeName": "source.java.mtrgen",
+  "comment": "MTRGen Java Templates",
+  "patterns": [
+    {
+      "include": "source.mtrgen"
+    },
+    {
+      "include": "source.java"
+    }
+  ]
+}

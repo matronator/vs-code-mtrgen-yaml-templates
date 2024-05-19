@@ -1,0 +1,13 @@
+{
+  "name": "mtrgen-md",
+  "scopeName": "text.html.markdown.mtrgen",
+  "comment": "MTRGen Markdown Templates",
+  "patterns": [
+    {
+      "include": "source.mtrgen"
+    },
+    {
+      "include": "text.html.markdown"
+    }
+  ]
+}

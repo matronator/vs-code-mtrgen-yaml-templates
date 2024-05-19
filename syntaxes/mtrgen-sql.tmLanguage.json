@@ -1,0 +1,13 @@
+{
+  "name": "mtrgen-sql",
+  "scopeName": "source.sql.mtrgen",
+  "comment": "MTRGen SQL Templates",
+  "patterns": [
+    {
+      "include": "source.mtrgen"
+    },
+    {
+      "include": "source.sql"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "mtrgen-js",
+  "scopeName": "source.js.mtrgen",
+  "comment": "MTRGen JavaScript Templates",
+  "patterns": [
+    {
+      "include": "source.mtrgen"
+    },
+    {
+      "include": "source.js"
+    }
+  ]
+}

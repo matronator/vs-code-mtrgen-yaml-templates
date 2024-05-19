@@ -1,0 +1,13 @@
+{
+  "name": "mtrgen-shell",
+  "scopeName": "source.shell.mtrgen",
+  "comment": "MTRGen Shell Templates",
+  "patterns": [
+    {
+      "include": "source.mtrgen"
+    },
+    {
+      "include": "source.shell"
+    }
+  ]
+}

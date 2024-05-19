@@ -1,0 +1,13 @@
+{
+  "name": "mtrgen-systemd",
+  "scopeName": "source.systemd.mtrgen",
+  "comment": "MTRGen Systemd Unit File Templates",
+  "patterns": [
+    {
+      "include": "source.mtrgen"
+    },
+    {
+      "include": "source.systemdUnitFile"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "mtrgen-cisco",
+  "scopeName": "source.cisco.mtrgen",
+  "comment": "MTRGen Cisco Config Templates",
+  "fileTypes": ["cisco.mtr"],
+  "patterns": [
+    {
+      "include": "source.mtrgen"
+    },
+    {
+      "include": "source.cisco"
+    }
+  ]
+}

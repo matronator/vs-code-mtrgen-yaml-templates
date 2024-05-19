@@ -1,0 +1,14 @@
+{
+  "name": "mtrgen-yaml",
+  "scopeName": "text.yaml.mtrgen",
+  "comment": "MTRGen YAML Templates",
+  "fileTypes": ["yml.mtr", "yaml.mtr", "sls.mtr"],
+  "patterns": [
+    {
+      "include": "source.mtrgen"
+    },
+    {
+      "include": "source.yaml"
+    }
+  ]
+}

@@ -1,0 +1,256 @@
+{
+    "name": "mtrgen",
+    "scopeName": "source.mtrgen",
+    "comment": "MTRGen template",
+    "firstLineMatch": "\\S+ --- MTRGEN ---.",
+    "patterns": [
+        {
+            "include": "variable.template.injection"
+        },
+        {
+            "begin": "<%-?",
+            "captures": [
+                {
+                    "name": "variable.entity.other.mtrgen.delimiter"
+                }
+            ],
+            "end": "-?%>",
+            "name": "variable.meta.scope.mtrgen",
+            "patterns": [
+                {
+                    "include": "#expression"
+                }
+            ]
+        },
+        {
+            "begin": "<%-?",
+            "captures": [
+                {
+                    "name": "entity.other.mtrgen.delimiter.tag"
+                }
+            ],
+            "end": "-?%>",
+            "name": "meta.scope.mtrgen.tag",
+            "patterns": [
+                {
+                    "include": "#expression"
+                }
+            ]
+        }
+    ],
+    "repository": {
+        "escaped_char": {
+            "match": "\\\\x[0-9A-F]{2}",
+            "name": "constant.character.escape.hex.mtrgen"
+        },
+        "escaped_unicode_char": {
+            "captures": {
+                "1": {
+                    "name": "constant.character.escape.unicode.16-bit-hex.mtrgen"
+                },
+                "2": {
+                    "name": "constant.character.escape.unicode.32-bit-hex.mtrgen"
+                },
+                "3": {
+                    "name": "constant.character.escape.unicode.name.mtrgen"
+                }
+            },
+            "match": "(\\\\U[0-9A-Fa-f]{8})|(\\\\u[0-9A-Fa-f]{4})|(\\\\N\\{[a-zA-Z ]+\\})"
+        },
+        "expression": {
+            "patterns": [
+                {
+                    "match": "[a-zA-Z_][a-zA-Z0-9_]*",
+                    "name": "variable.other.mtrgen"
+                },
+                {
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.other.mtrgen"
+                        },
+                        "2": {
+                            "name": "variable.other.mtrgen.filter"
+                        }
+                    },
+                    "match": "(\\|)([a-zA-Z_][a-zA-Z0-9_]*)"
+                },
+                {
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.other.mtrgen"
+                        },
+                        "2": {
+                            "name": "variable.other.mtrgen.attribute"
+                        }
+                    },
+                    "match": "(\\.)([a-zA-Z_][a-zA-Z0-9_]*)"
+                },
+                {
+                    "begin": "\\[",
+                    "captures": [
+                        {
+                            "name": "punctuation.other.mtrgen"
+                        }
+                    ],
+                    "end": "\\]",
+                    "patterns": [
+                        {
+                            "include": "#expression"
+                        }
+                    ]
+                },
+                {
+                    "begin": "\\(",
+                    "captures": [
+                        {
+                            "name": "punctuation.other.mtrgen"
+                        }
+                    ],
+                    "end": "\\)",
+                    "patterns": [
+                        {
+                            "include": "#expression"
+                        }
+                    ]
+                },
+                {
+                    "begin": "\\{",
+                    "captures": [
+                        {
+                            "name": "punctuation.other.mtrgen"
+                        }
+                    ],
+                    "end": "\\}",
+                    "patterns": [
+                        {
+                            "include": "#expression"
+                        }
+                    ]
+                },
+                {
+                    "match": "(\\.|:|\\||,)",
+                    "name": "punctuation.other.mtrgen"
+                },
+                {
+                    "match": "(==|<=|=>|<|>|!=)",
+                    "name": "keyword.operator.comparison.mtrgen"
+                },
+                {
+                    "match": "=",
+                    "name": "keyword.operator.assignment.mtrgen"
+                },
+                {
+                    "begin": "\"",
+                    "beginCaptures": [
+                        {
+                            "name": "punctuation.definition.string.begin.mtrgen"
+                        }
+                    ],
+                    "end": "\"",
+                    "endCaptures": [
+                        {
+                            "name": "punctuation.definition.string.end.mtrgen"
+                        }
+                    ],
+                    "name": "string.quoted.double.mtrgen",
+                    "patterns": [
+                        {
+                            "include": "#string"
+                        }
+                    ]
+                },
+                {
+                    "begin": "'",
+                    "beginCaptures": [
+                        {
+                            "name": "punctuation.definition.string.begin.mtrgen"
+                        }
+                    ],
+                    "end": "'",
+                    "endCaptures": [
+                        {
+                            "name": "punctuation.definition.string.end.mtrgen"
+                        }
+                    ],
+                    "name": "string.quoted.single.mtrgen",
+                    "patterns": [
+                        {
+                            "include": "#string"
+                        }
+                    ]
+                },
+                {
+                    "begin": "@/",
+                    "beginCaptures": [
+                        {
+                            "name": "punctuation.definition.regexp.begin.mtrgen"
+                        }
+                    ],
+                    "end": "/",
+                    "endCaptures": [
+                        {
+                            "name": "punctuation.definition.regexp.end.mtrgen"
+                        }
+                    ],
+                    "name": "string.regexp.mtrgen",
+                    "patterns": [
+                        {
+                            "include": "#simple_escapes"
+                        }
+                    ]
+                }
+            ]
+        },
+        "simple_escapes": {
+            "captures": {
+                "1": {
+                    "name": "constant.character.escape.newline.mtrgen"
+                },
+                "10": {
+                    "name": "constant.character.escape.tab.mtrgen"
+                },
+                "11": {
+                    "name": "constant.character.escape.vertical-tab.mtrgen"
+                },
+                "2": {
+                    "name": "constant.character.escape.backlash.mtrgen"
+                },
+                "3": {
+                    "name": "constant.character.escape.double-quote.mtrgen"
+                },
+                "4": {
+                    "name": "constant.character.escape.single-quote.mtrgen"
+                },
+                "5": {
+                    "name": "constant.character.escape.bell.mtrgen"
+                },
+                "6": {
+                    "name": "constant.character.escape.backspace.mtrgen"
+                },
+                "7": {
+                    "name": "constant.character.escape.formfeed.mtrgen"
+                },
+                "8": {
+                    "name": "constant.character.escape.linefeed.mtrgen"
+                },
+                "9": {
+                    "name": "constant.character.escape.return.mtrgen"
+                }
+            },
+            "match": "(\\\\\\n)|(\\\\\\\\)|(\\\\\\\")|(\\\\')|(\\\\a)|(\\\\b)|(\\\\f)|(\\\\n)|(\\\\r)|(\\\\t)|(\\\\v)"
+        },
+        "string": {
+            "patterns": [
+                {
+                    "include": "#simple_escapes"
+                },
+                {
+                    "include": "#escaped_char"
+                },
+                {
+                    "include": "#escaped_unicode_char"
+                }
+            ]
+        }
+    }
+}

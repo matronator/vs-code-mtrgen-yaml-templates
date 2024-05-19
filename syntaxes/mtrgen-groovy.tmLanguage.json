@@ -1,0 +1,13 @@
+{
+  "name": "mtrgen-groovy",
+  "scopeName": "source.groovy.mtrgen",
+  "comment": "MTRGen Groovy Templates",
+  "patterns": [
+    {
+      "include": "source.mtrgen"
+    },
+    {
+      "include": "source.groovy"
+    }
+  ]
+}

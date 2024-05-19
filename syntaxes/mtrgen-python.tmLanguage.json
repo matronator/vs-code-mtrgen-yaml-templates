@@ -1,0 +1,13 @@
+{
+  "name": "mtrgen-python",
+  "scopeName": "source.python.mtrgen",
+  "comment": "MTRGen Python Templates",
+  "patterns": [
+    {
+      "include": "source.mtrgen"
+    },
+    {
+      "include": "source.python"
+    }
+  ]
+}

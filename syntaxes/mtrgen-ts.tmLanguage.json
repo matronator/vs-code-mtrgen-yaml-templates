@@ -1,0 +1,13 @@
+{
+  "name": "mtrgen-ts",
+  "scopeName": "source.ts.mtrgen",
+  "comment": "MTRGen TypeScript Templates",
+  "patterns": [
+    {
+      "include": "source.mtrgen"
+    },
+    {
+      "include": "source.ts"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "mtrgen-ruby",
+  "scopeName": "text.ruby.mtrgen",
+  "comment": "MTRGen Ruby Templates",
+  "patterns": [
+    {
+      "include": "source.mtrgen"
+    },
+    {
+      "include": "source.ruby"
+    }
+  ]
+}

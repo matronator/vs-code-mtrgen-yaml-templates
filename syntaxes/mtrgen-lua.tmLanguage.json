@@ -1,0 +1,13 @@
+{
+  "name": "mtrgen-lua",
+  "scopeName": "text.lua.mtrgen",
+  "comment": "MTRGen Lua Templates",
+  "patterns": [
+    {
+      "include": "source.mtrgen"
+    },
+    {
+      "include": "source.lua"
+    }
+  ]
+}

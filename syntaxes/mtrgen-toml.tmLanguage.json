@@ -1,0 +1,13 @@
+{
+  "name": "mtrgen-toml",
+  "scopeName": "text.toml.mtrgen",
+  "comment": "MTRGen TOML Templates",
+  "patterns": [
+    {
+      "include": "source.mtrgen"
+    },
+    {
+      "include": "source.toml"
+    }
+  ]
+}

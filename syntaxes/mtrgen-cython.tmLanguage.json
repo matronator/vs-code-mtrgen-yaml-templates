@@ -1,0 +1,13 @@
+{
+  "name": "mtrgen-cython",
+  "scopeName": "source.cython.mtrgen",
+  "comment": "MTRGen Cython Templates",
+  "patterns": [
+    {
+      "include": "source.mtrgen"
+    },
+    {
+      "include": "source.cython"
+    }
+  ]
+}

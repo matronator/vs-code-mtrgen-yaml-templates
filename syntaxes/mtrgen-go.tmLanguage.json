@@ -1,0 +1,13 @@
+{
+  "name": "mtrgen-go",
+  "scopeName": "source.go.mtrgen",
+  "comment": "MTRGen Go Templates",
+  "patterns": [
+    {
+      "include": "source.mtrgen"
+    },
+    {
+      "include": "source.go"
+    }
+  ]
+}

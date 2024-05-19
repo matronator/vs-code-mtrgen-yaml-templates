@@ -1,0 +1,13 @@
+{
+  "name": "mtrgen-nginx",
+  "scopeName": "source.nginx.mtrgen",
+  "comment": "MTRGen NGINX Templates",
+  "patterns": [
+    {
+      "include": "source.mtrgen"
+    },
+    {
+      "include": "source.nginx"
+    }
+  ]
+}

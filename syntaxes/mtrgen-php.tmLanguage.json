@@ -1,0 +1,13 @@
+{
+  "name": "mtrgen-php",
+  "scopeName": "source.php.mtrgen",
+  "comment": "MTRGen PHP Templates",
+  "patterns": [
+    {
+      "include": "source.mtrgen"
+    },
+    {
+      "include": "source.php"
+    }
+  ]
+}

@@ -2,7 +2,7 @@
     "name": "mtrgen-yaml-templates",
     "displayName": "MTRGen Templates Syntax Highlighting",
     "description": "Provides syntax support for YAML templates used by MTRGen and Pars'Em.",
-    "version": "1.1.3",
+    "version": "2.0.0",
     "engines": {
         "vscode": "^1.55.0"
     },
@@ -16,55 +16,577 @@
             {
                 "path": "./syntaxes/injection.json",
                 "scopeName": "variable.template.injection",
-                "injectTo": ["source.yaml", "source.json", "source.neon"]
-            }
-        ],
-        "jsonValidation": [
+                "injectTo": [
+                    "source.yaml",
+                    "source.json",
+                    "source.neon",
+                    "source.go",
+                    "source.php",
+                    "source.rust",
+                    "source.js",
+                    "source.ts",
+                    "source.css",
+                    "text.html.basic",
+                    "source.cpp",
+                    "source.haxe",
+                    "source.c",
+                    "source.java",
+                    "source.python",
+                    "source.cython",
+                    "source.shell",
+                    "source.cisco",
+                    "source.dockerfile",
+                    "source.groovy",
+                    "source.lua",
+                    "text.html.markdown",
+                    "source.nginx",
+                    "source.ini",
+                    "source.ruby",
+                    "source.sql",
+                    "source.terraform",
+                    "source.toml",
+                    "source.nim",
+                    "source.perl",
+                    "source.clarity",
+                    "text.xml"
+                ]
+            },
             {
-                "fileMatch": [".template.yaml", ".template.yml", ".template.json", ".template.neon"],
-                "url": "https://files.matronator.com/public/mtrgen/1.0.1/mtrgen-template-schema.json"
-            }
+                "language": "mtrgen-html",
+                "scopeName": "text.html.mtrgen",
+                "path": "./syntaxes/mtrgen-html.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen-xml",
+                "scopeName": "text.xml.mtrgen",
+                "path": "./syntaxes/mtrgen-xml.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen-css",
+                "scopeName": "text.css.mtrgen",
+                "path": "./syntaxes/mtrgen-css.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen-json",
+                "scopeName": "text.json.mtrgen",
+                "path": "./syntaxes/mtrgen-json.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen-md",
+                "scopeName": "text.html.markdown.mtrgen",
+                "path": "./syntaxes/mtrgen-md.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen-py",
+                "scopeName": "source.python.mtrgen",
+                "path": "./syntaxes/mtrgen-python.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen-cy",
+                "scopeName": "source.cython.mtrgen",
+                "path": "./syntaxes/mtrgen-cython.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen-rb",
+                "scopeName": "text.ruby.mtrgen",
+                "path": "./syntaxes/mtrgen-ruby.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen-js",
+                "scopeName": "source.js.mtrgen",
+                "path": "./syntaxes/mtrgen-js.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen-ts",
+                "scopeName": "source.ts.mtrgen",
+                "path": "./syntaxes/mtrgen-ts.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen-yaml",
+                "scopeName": "text.yaml.mtrgen",
+                "path": "./syntaxes/mtrgen-yaml.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen-toml",
+                "scopeName": "text.toml.mtrgen",
+                "path": "./syntaxes/mtrgen-toml.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen-latex",
+                "scopeName": "text.latex.mtrgen",
+                "path": "./syntaxes/mtrgen-latex.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen-lua",
+                "scopeName": "text.lua.mtrgen",
+                "path": "./syntaxes/mtrgen-lua.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen-properties",
+                "scopeName": "source.ini.mtrgen",
+                "path": "./syntaxes/mtrgen-properties.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen-shell",
+                "scopeName": "source.shell.mtrgen",
+                "path": "./syntaxes/mtrgen-shell.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen-dockerfile",
+                "scopeName": "source.dockerfile.mtrgen",
+                "path": "./syntaxes/mtrgen-dockerfile.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen-sql",
+                "scopeName": "source.sql.mtrgen",
+                "path": "./syntaxes/mtrgen-sql.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen",
+                "scopeName": "source.mtrgen",
+                "path": "./syntaxes/mtrgen.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen-groovy",
+                "scopeName": "source.groovy.mtrgen",
+                "path": "./syntaxes/mtrgen-groovy.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen-terraform",
+                "scopeName": "source.terraform.mtrgen",
+                "path": "./syntaxes/mtrgen-terraform.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen-nginx",
+                "scopeName": "source.nginx.mtrgen",
+                "path": "./syntaxes/mtrgen-nginx.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen-systemd",
+                "scopeName": "source.systemd.mtrgen",
+                "path": "./syntaxes/mtrgen-systemd.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen-cpp",
+                "scopeName": "source.cpp.mtrgen",
+                "path": "./syntaxes/mtrgen-cpp.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen-cisco",
+                "scopeName": "source.cisco.mtrgen",
+                "path": "./syntaxes/mtrgen-cisco.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen-java",
+                "scopeName": "source.java.mtrgen",
+                "path": "./syntaxes/mtrgen-java.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen-php",
+                "scopeName": "source.php.mtrgen",
+                "path": "./syntaxes/mtrgen-php.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen-rust",
+                "scopeName": "source.rust.mtrgen",
+                "path": "./syntaxes/mtrgen-rust.tmLanguage.json"
+              }
         ],
         "languages": [
             {
-                "id": "json",
+                "id": "mtrgen-html",
                 "aliases": [
-                    "JSON",
-                    "json"
+                    "MTRGen HTML",
+                    "mtrgen-html",
+                    "mtr-html"
                 ],
                 "extensions": [
-                    ".json",
-                    ".bowerrc",
-                    ".jshintrc",
-                    ".jscsrc",
-                    ".eslintrc",
-                    ".babelrc",
-                    ".webmanifest",
-                    ".code-workspace"
-                ],
-                "mimetypes": [
-                    "application/json",
-                    "application/manifest+json"
+                    ".html.mtr"
                 ],
                 "configuration": "./language-configuration.json"
             },
             {
-                "id": "yaml",
-                "aliases": ["YAML", "yaml"],
-                "extensions": [".eyaml", ".eyml", ".yaml", ".yml"],
-                "firstLine": "^#cloud-config",
-                "configuration": "./yaml/language-configuration.json"
-            },
-            {
-                "id": "neon",
+                "id": "mtrgen-xml",
                 "aliases": [
-                    "Neon",
-                    "neon"
+                    "MTRGen XML",
+                    "mtrgen-xml",
+                    "mtr-xml"
                 ],
                 "extensions": [
-                    ".neon"
+                    ".xml.mtr"
                 ],
-                "configuration": "./neon/language-configuration.json"
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "mtrgen-css",
+                "aliases": [
+                    "MTRGen CSS",
+                    "mtrgen-css",
+                    "mtr-css"
+                ],
+                "extensions": [
+                    ".css.mtr"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "mtrgen-json",
+                "aliases": [
+                    "MTRGen JSON",
+                    "mtrgen-json",
+                    "mtr-json"
+                ],
+                "extensions": [
+                    ".json.mtr",
+                    ".code-workspace.mtr"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "mtrgen-md",
+                "aliases": [
+                    "MTRGen Markdown",
+                    "mtrgen-md",
+                    "mtr-md"
+                ],
+                "extensions": [
+                    ".md.mtr"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "mtrgen-py",
+                "aliases": [
+                    "MTRGen Python",
+                    "mtrgen-py",
+                    "mtr-py"
+                ],
+                "extensions": [
+                    "py.mtr",
+                    "pyi.mtr"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "mtrgen-cy",
+                "aliases": [
+                    "MTRGen Cython",
+                    "mtrgen-cy",
+                    "mtr-cy"
+                ],
+                "extensions": [
+                    "pyx.mtr",
+                    "pxd.mtr",
+                    "pxi.mtr"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "mtrgen-rb",
+                "aliases": [
+                    "MTRGen Ruby",
+                    "mtrgen-rb",
+                    "mtr-rb"
+                ],
+                "extensions": [
+                    "rb.mtr",
+                    "rbw.mtr"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "mtrgen-js",
+                "aliases": [
+                    "MTRGen JavaScript",
+                    "mtrgen-js",
+                    "MTRGen JS",
+                    "mtr-js"
+                ],
+                "extensions": [
+                    "js.mtr"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "mtrgen-ts",
+                "aliases": [
+                    "MTRGen TypeScript",
+                    "mtrgen-ts",
+                    "MTRGen TS",
+                    "mtr-ts"
+                ],
+                "extensions": [
+                    "ts.mtr"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "mtrgen-yaml",
+                "aliases": [
+                    "MTRGen YAML",
+                    "mtrgen-yaml",
+                    "mtr-yaml"
+                ],
+                "extensions": [
+                    ".yml.mtr",
+                    ".yaml.mtr",
+                    ".sls.mtr"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "mtrgen-toml",
+                "aliases": [
+                    "MTRGen TOML",
+                    "mtrgen-toml",
+                    "mtr-toml"
+                ],
+                "extensions": [
+                    ".toml.mtr"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "mtrgen-latex",
+                "aliases": [
+                    "MTRGen LaTeX",
+                    "mtrgen-latex",
+                    "mtr-latex"
+                ],
+                "extensions": [
+                    ".latex.mtr",
+                    ".tex.mtr"
+                ],
+                "configuration": "./language-configuration-latex.json"
+            },
+            {
+                "id": "mtrgen-lua",
+                "aliases": [
+                    "MTRGen Lua",
+                    "mtrgen-lua",
+                    "mtr-lua"
+                ],
+                "extensions": [
+                    ".lua.mtr"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "mtrgen-properties",
+                "aliases": [
+                    "MTRGen Properties/ini/Conf",
+                    "mtrgen-properties",
+                    "mtr-properties",
+                    "mtrgen-ini",
+                    "mtrgen-conf"
+                ],
+                "extensions": [
+                    ".properties.mtr",
+                    ".cfg.mtr",
+                    ".conf.mtr",
+                    ".desktop.mtr",
+                    ".directory.mtr",
+                    ".ini.mtr"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "mtrgen-shell",
+                "aliases": [
+                    "MTRGen Shell Script",
+                    "mtrgen-shell",
+                    "mtrgen-shellscript",
+                    "mtr-shell",
+                    "mtrgen-sh",
+                    "mtrgen-bash"
+                ],
+                "extensions": [
+                    ".sh.mtr",
+                    ".bash.mtr",
+                    ".bashrc.mtr",
+                    ".bash_aliases.mtr",
+                    ".bash_profile.mtr",
+                    ".bash_login.mtr",
+                    ".ebuild.mtr",
+                    ".install.mtr",
+                    ".profile.mtr",
+                    ".bash_logout.mtr",
+                    ".zsh.mtr",
+                    ".zshrc.mtr",
+                    ".zprofile.mtr",
+                    ".zlogin.mtr",
+                    ".zlogout.mtr",
+                    ".zshenv.mtr",
+                    ".zsh-theme.mtr",
+                    ".ksh.mtr",
+                    ".env.mtr"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "mtrgen-dockerfile",
+                "aliases": [
+                    "MTRGen Dockerfile",
+                    "mtrgen-dockerfile",
+                    "mtr-dockerfile"
+                ],
+                "extensions": [
+                    ".dockerfile.mtr"
+                ],
+                "filenames": [
+                    "Dockerfile.mtr"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "mtrgen-sql",
+                "aliases": [
+                    "MTRGen SQL",
+                    "mtrgen-sql",
+                    "mtr-sql"
+                ],
+                "extensions": [
+                    ".sql.mtr"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "mtrgen-terraform",
+                "aliases": [
+                    "MTRGen Terraform",
+                    "mtrgen-terraform",
+                    "mtr-terraform",
+                    "MTRGen-HCL",
+                    "mtrgen-hcl",
+                    "MTRGen-Hashicorp",
+                    "mtrgen-hashicorp"
+                ],
+                "extensions": [
+                    ".tf.mtr",
+                    ".tfvars.mtr",
+                    ".hcl.mtr"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "mtrgen-nginx",
+                "aliases": [
+                    "MTRGen Nginx",
+                    "mtrgen-nginx",
+                    "mtr-nginx"
+                ],
+                "extensions": [
+                    ".conf.mtr"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "mtrgen-groovy",
+                "aliases": [
+                    "MTRGen Groovy",
+                    "mtrgen-groovy",
+                    "mtr-groovy"
+                ],
+                "extensions": [
+                    ".groovy.mtr"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "mtrgen-systemd",
+                "aliases": [
+                    "MTRGen Systemd Unit File",
+                    "mtrgen-systemd",
+                    "mtr-systemd"
+                ],
+                "extensions": [
+                    ".link.mtr",
+                    ".netdev.mtr",
+                    ".network.mtr",
+                    ".service.mtr",
+                    ".socket.mtr",
+                    ".device.mtr",
+                    ".mount.mtr",
+                    ".automount.mtr",
+                    ".swap.mtr",
+                    ".target.mtr",
+                    ".path.mtr",
+                    ".timer.mtr",
+                    ".snapshot.mtr",
+                    ".slice.mtr",
+                    ".scope.mtr"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "mtrgen-cpp",
+                "aliases": [
+                    "MTRGen C++",
+                    "mtrgen-cpp",
+                    "mtr-cpp"
+                ],
+                "extensions": [
+                    ".c.mtr",
+                    ".cpp.mtr",
+                    ".h.mtr"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "mtrgen-cisco",
+                "aliases": [
+                    "MTRGen Cisco Config",
+                    "mtrgen-cisco"
+                ],
+                "extensions": [
+                    ".ios.mtr",
+                    ".cisco.mtr"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "mtrgen-java",
+                "aliases": [
+                    "MTRGen Java",
+                    "mtrgen-java"
+                ],
+                "extensions": [
+                    ".java.mtr"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "mtrgen-php",
+                "aliases": [
+                    "MTRGen PHP",
+                    "mtrgen-php"
+                ],
+                "extensions": [
+                    ".php.mtr"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "mtrgen-rust",
+                "aliases": [
+                    "MTRGen Rust",
+                    "mtrgen-rust"
+                ],
+                "extensions": [
+                    ".rs.mtr"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "mtrgen-go",
+                "aliases": [
+                    "MTRGen Go",
+                    "mtrgen-go"
+                ],
+                "extensions": [
+                    ".go.mtr"
+                ],
+                "configuration": "./language-configuration.json"
             }
         ]
     },
@@ -83,7 +605,12 @@
         "theme": "dark"
     },
     "keywords": [
-        "yaml", "yaml template", "templates", "templating", "mtrgen", "matronator"
+        "yaml",
+        "yaml template",
+        "templates",
+        "templating",
+        "mtrgen",
+        "matronator"
     ],
     "license": "SEE LICENSE IN LICENSE.md",
     "icon": "icon-256.png",

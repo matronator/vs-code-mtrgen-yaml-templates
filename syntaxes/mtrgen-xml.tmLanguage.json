@@ -1,0 +1,13 @@
+{
+  "name": "mtrgen-xml",
+  "scopeName": "text.xml.mtrgen",
+  "comment": "MTRGen XML Templates",
+  "patterns": [
+    {
+      "include": "source.mtrgen"
+    },
+    {
+      "include": "text.xml"
+    }
+  ]
+}

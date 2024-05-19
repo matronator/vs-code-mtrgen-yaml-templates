@@ -1,0 +1,13 @@
+{
+  "name": "mtrgen-json",
+  "scopeName": "text.json.mtrgen",
+  "comment": "MTRGen JSON Templates",
+  "patterns": [
+    {
+      "include": "source.mtrgen"
+    },
+    {
+      "include": "source.json"
+    }
+  ]
+}

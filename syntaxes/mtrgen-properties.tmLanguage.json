@@ -1,0 +1,13 @@
+{
+  "name": "mtrgen-properties",
+  "scopeName": "source.ini.mtrgen",
+  "comment": "MTRGen properties/ini/conf Templates",
+  "patterns": [
+    {
+      "include": "source.mtrgen"
+    },
+    {
+      "include": "source.ini"
+    }
+  ]
+}

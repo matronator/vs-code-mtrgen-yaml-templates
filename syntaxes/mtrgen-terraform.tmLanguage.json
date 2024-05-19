@@ -1,0 +1,13 @@
+{
+  "name": "mtrgen-terraform",
+  "scopeName": "source.terraform.mtrgen",
+  "comment": "MTRGen terraform Templates",
+  "patterns": [
+    {
+      "include": "source.mtrgen"
+    },
+    {
+      "include": "source.terraform"
+    }
+  ]
+}

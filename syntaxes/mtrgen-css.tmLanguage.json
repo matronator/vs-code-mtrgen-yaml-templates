@@ -1,0 +1,13 @@
+{
+  "name": "mtrgen-css",
+  "scopeName": "text.css.mtrgen",
+  "comment": "MTRGen CSS Templates",
+  "patterns": [
+    {
+      "include": "source.mtrgen"
+    },
+    {
+      "include": "source.css"
+    }
+  ]
+}
