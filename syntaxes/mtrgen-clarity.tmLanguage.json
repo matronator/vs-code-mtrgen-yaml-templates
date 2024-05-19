@@ -8,7 +8,7 @@
       "include": "source.mtrgen"
     },
     {
-      "include": "source.clarity"
+      "include": "source.clar"
     }
   ]
 }
