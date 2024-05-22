@@ -11,6 +11,11 @@
     ;; the human readable name of the token
     (get-name () (response (string-ascii 32) uint))
 
+    <% if $something == 'asdf' %>
+    ;; the ticker symbol, or empty if none
+    (get-symbol () (response (string-ascii 32) uint))
+    <% endif %>
+
     ;; the ticker symbol, or empty if none
     (get-symbol () (response (string-ascii 32) uint))
 
@@ -27,3 +32,9 @@
     (get-token-uri () (response (optional (string-utf8 256)) uint))
   )
 )
+
+<% if $assd == 12 %>
+(define-data (asdf)
+  (asdf (uint 32))
+)
+<% endif %>

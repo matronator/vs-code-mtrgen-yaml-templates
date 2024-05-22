@@ -3,6 +3,8 @@
     "scopeName": "source.mtrgen",
     "comment": "MTRGen template",
     "firstLineMatch": "\\S+ --- MTRGEN ---.",
+    "foldingStartMarker": "(<%\\s*(if))",
+    "foldingStopMarker": "(<%\\s*(endif)\\s*%>)",
     "patterns": [
         {
             "include": "variable.template.injection"
@@ -132,12 +134,20 @@
                     "name": "punctuation.other.mtrgen"
                 },
                 {
-                    "match": "(==|<=|=>|<|>|!=)",
+                    "match": "(===|==|<=|=>|<|>|!==|!=)",
                     "name": "keyword.operator.comparison.mtrgen"
                 },
                 {
                     "match": "=",
                     "name": "keyword.operator.assignment.mtrgen"
+                },
+                {
+                    "match": "\\b(if)\\b",
+                    "name": "keyword.control.mtrgen"
+                },
+                {
+                    "match": "\\b(true|false|null)\\b",
+                    "name": "constant.language.mtrgen"
                 },
                 {
                     "begin": "\"",

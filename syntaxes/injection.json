@@ -1,10 +1,126 @@
 {
     "scopeName": "variable.template.injection",
     "injectionSelector": "L:source.yaml, L:source.json, L:source.neon, L:source.go, L:source.php, L:source.rust, L:source.js, L:source.ts, L:source.css, L:text.html.basic, L:source.cpp, L:source.haxe, L:source.c, L:source.java, L:source.python, L:source.cython, L:source.shell, L:source.cisco, L:source.dockerfile, L:source.groovy, L:source.lua, L:text.html.markdown, L:source.nginx, L:source.ini, L:source.ruby, L:source.sql, L:source.terraform, L:source.toml, L:source.nim, L:source.perl, L:source.clar, L:text.xml",
+    "comment": "MTRGen template",
+    "firstLineMatch": "\\S+ --- MTRGEN ---.",
+    "foldingStartMarker": "(<%\\s*(if))",
+    "foldingStopMarker": "(<%\\s*(endif)\\s*%>)",
     "patterns": [
         {
             "include": "#variables"
-        }
+        },
+        {
+            "include": "variable.template.injection"
+        },
+        {
+            "begin": "<%-?",
+            "captures": [
+                {
+                    "name": "variable.entity.other.mtrgen.delimiter"
+                }
+            ],
+            "end": "-?%>",
+            "name": "variable.meta.scope.mtrgen",
+            "patterns": [
+                {
+                    "include": "#expression"
+                }
+            ]
+        },
+        {
+            "begin": "<%-?",
+            "captures": [
+                {
+                    "name": "entity.other.mtrgen.delimiter.tag"
+                }
+            ],
+            "end": "-?%>",
+            "name": "meta.scope.mtrgen.tag",
+            "patterns": [
+                {
+                    "include": "#expression"
+                }
+            ]
+        },
+        {
+			"begin": "<%",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.tag.begin.mtrgen"
+				}
+			},
+			"end": "%>",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.tag.end.mtrgen"
+				}
+			},
+			"name": "source.mtrgen.injection",
+			"patterns": [
+				{
+					"match": "(?<=\\{)(\\![^}]*?)",
+					"name": "keyword.mtrgen"
+				},
+				{
+					"match": "\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)\\b",
+					"name": "constant.numeric.mtrgen"
+				},
+				{
+					"match": "(?i)true|false|null",
+					"name": "constant.language.mtrgen"
+				},
+				{
+					"captures": {
+						"1": {
+							"name": "keyword.control.single.mtrgen"
+						},
+						"2": {
+							"patterns": [
+								{
+									"include": "source.php#php-types"
+								}
+							]
+						}
+					},
+					"match": "(?<=\\{)(varType|var)\\s+([^\\$][^\\s]+\\b)"
+				},
+				{
+					"match": "(?i)(?<=\\{)/?([a-z0-9_]+)\\s*",
+					"name": "keyword.control.mtrgen"
+				},
+				{
+					"match": "(?i)(?<=\\s)(\\!|/|===|as|and|&&|or|\\|\\||\\+\\+|\\-\\-|==|<=>|>=|<=)\\s?",
+					"name": "keyword.operator.mtrgen"
+				},
+				{
+					"match": "->",
+					"name": "keyword.operator.mtrgen"
+				},
+				{
+					"captures": {
+						"1": {
+							"name": "keyword.other.mtrgen"
+						},
+						"2": {
+							"name": "keyword.other.mtrgen"
+						}
+					},
+					"match": "(\\|)(\\w+)(?:\\:([^\\|\\}]+))*?"
+				},
+				{
+					"name": "variable.other.mtrgen",
+					"match": "\\$[a-zA-Z0-9_]+"
+				},
+				{
+					"name": "string.quoted.single.mtrgen",
+					"include": "source.php#string-single-quoted"
+				},
+				{
+					"name": "string.quoted.double.mtrgen",
+					"include": "source.php#string-double-quoted"
+				}
+			]
+		}
     ],
     "repository": {
         "variables": {
@@ -20,6 +136,172 @@
                     }
 				}
 			]
+        },
+        "expression": {
+            "patterns": [
+                {
+                    "match": "[a-zA-Z_][a-zA-Z0-9_]*",
+                    "name": "variable.other.mtrgen"
+                },
+                {
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.other.mtrgen"
+                        },
+                        "2": {
+                            "name": "variable.other.mtrgen.filter"
+                        }
+                    },
+                    "match": "(\\|)([a-zA-Z_][a-zA-Z0-9_]*)"
+                },
+                {
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.other.mtrgen"
+                        },
+                        "2": {
+                            "name": "variable.other.mtrgen.attribute"
+                        }
+                    },
+                    "match": "(\\.)([a-zA-Z_][a-zA-Z0-9_]*)"
+                },
+                {
+                    "begin": "\\[",
+                    "captures": [
+                        {
+                            "name": "punctuation.other.mtrgen"
+                        }
+                    ],
+                    "end": "\\]",
+                    "patterns": [
+                        {
+                            "include": "#expression"
+                        }
+                    ]
+                },
+                {
+                    "begin": "\\(",
+                    "captures": [
+                        {
+                            "name": "punctuation.other.mtrgen"
+                        }
+                    ],
+                    "end": "\\)",
+                    "patterns": [
+                        {
+                            "include": "#expression"
+                        }
+                    ]
+                },
+                {
+                    "begin": "\\{",
+                    "captures": [
+                        {
+                            "name": "punctuation.other.mtrgen"
+                        }
+                    ],
+                    "end": "\\}",
+                    "patterns": [
+                        {
+                            "include": "#expression"
+                        }
+                    ]
+                },
+                {
+                    "match": "(\\.|:|\\||,)",
+                    "name": "punctuation.other.mtrgen"
+                },
+                {
+                    "match": "(===|==|<=|=>|<|>|!==|!=)",
+                    "name": "keyword.operator.comparison.mtrgen"
+                },
+                {
+                    "match": "=",
+                    "name": "keyword.operator.assignment.mtrgen"
+                },
+                {
+                    "match": "\\b(if)\\b",
+                    "name": "keyword.control.mtrgen"
+                },
+                {
+                    "match": "\\b(true|false|null)\\b",
+                    "name": "constant.language.mtrgen"
+                },
+                {
+                    "begin": "\"",
+                    "beginCaptures": [
+                        {
+                            "name": "punctuation.definition.string.begin.mtrgen"
+                        }
+                    ],
+                    "end": "\"",
+                    "endCaptures": [
+                        {
+                            "name": "punctuation.definition.string.end.mtrgen"
+                        }
+                    ],
+                    "name": "string.quoted.double.mtrgen",
+                    "patterns": [
+                        {
+                            "include": "#string"
+                        }
+                    ]
+                },
+                {
+                    "begin": "'",
+                    "beginCaptures": [
+                        {
+                            "name": "punctuation.definition.string.begin.mtrgen"
+                        }
+                    ],
+                    "end": "'",
+                    "endCaptures": [
+                        {
+                            "name": "punctuation.definition.string.end.mtrgen"
+                        }
+                    ],
+                    "name": "string.quoted.single.mtrgen",
+                    "patterns": [
+                        {
+                            "include": "#string"
+                        }
+                    ]
+                },
+                {
+                    "begin": "@/",
+                    "beginCaptures": [
+                        {
+                            "name": "punctuation.definition.regexp.begin.mtrgen"
+                        }
+                    ],
+                    "end": "/",
+                    "endCaptures": [
+                        {
+                            "name": "punctuation.definition.regexp.end.mtrgen"
+                        }
+                    ],
+                    "name": "string.regexp.mtrgen",
+                    "patterns": [
+                        {
+                            "include": "#simple_escapes"
+                        }
+                    ]
+                }
+            ]
+        },
+        "conditions": {
+            "patterns": [
+                {
+                    "match": "(?<all><%\\s?if\\s(?<condition>(?<negation>!?)(?<left>\\S+?)\\s?(?<right>(?<operator>(?:<=|<|===|==|>=|>|!==|!=))\\s?(?<value>.+?))?)\\s?%>)",
+                    "name": "variable",
+                    "captures": {
+                        "all": { "name": "conditional.block.mtrgen" },
+                        "condition": { "name": "keyword.control" },
+                        "3": { "name": "variable.other.mtrgen.filters" },
+                        "4": { "name": "keyword" }
+                    }
+                }
+            ]
         }
     }
 }
