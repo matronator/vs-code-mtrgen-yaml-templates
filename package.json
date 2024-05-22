@@ -2,16 +2,22 @@
     "name": "mtrgen-yaml-templates",
     "displayName": "MTRGen Templates Syntax Highlighting",
     "description": "Provides syntax support for YAML templates used by MTRGen and Pars'Em.",
-    "version": "2.0.4",
+    "version": "2.0.5",
     "engines": {
         "vscode": "^1.55.0"
     },
     "categories": [
         "Programming Languages",
         "Formatters",
-        "Other"
+        "Other",
+        "Snippets"
     ],
     "contributes": {
+        "snippets": [
+            {
+                "path": "./snippets/snippets.code-snippets"
+            }
+        ],
         "grammars": [
             {
                 "path": "./syntaxes/injection.json",
@@ -142,11 +148,6 @@
                 "path": "./syntaxes/mtrgen-sql.tmLanguage.json"
               },
               {
-                "language": "mtrgen",
-                "scopeName": "source.mtrgen",
-                "path": "./syntaxes/mtrgen.tmLanguage.json"
-              },
-              {
                 "language": "mtrgen-groovy",
                 "scopeName": "source.groovy.mtrgen",
                 "path": "./syntaxes/mtrgen-groovy.tmLanguage.json"
@@ -195,6 +196,11 @@
                 "language": "mtrgen-clarity",
                 "scopeName": "source.clar.mtrgen",
                 "path": "./syntaxes/mtrgen-clarity.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen-go",
+                "scopeName": "source.go.mtrgen",
+                "path": "./syntaxes/mtrgen-go.tmLanguage.json"
               }
         ],
         "languages": [
@@ -610,7 +616,7 @@
     "publisher": "Matronator",
     "author": {
         "name": "Matronator",
-        "url": "https://matronator.com"
+        "url": "https://matronator.cz"
     },
     "repository": {
         "type": "git",
@@ -622,10 +628,9 @@
         "theme": "dark"
     },
     "keywords": [
-        "yaml",
-        "yaml template",
         "templates",
         "templating",
+        "template engine",
         "mtrgen",
         "matronator"
     ],

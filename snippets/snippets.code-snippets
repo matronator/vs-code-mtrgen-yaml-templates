@@ -1,0 +1,14 @@
+{
+    "header": {
+        "prefix": ["---", "header", "mtrgen"],
+        "description": "MTRGen template header",
+        "scope": "mtrgen,mtrgen-html,mtrgen-xml,mtrgen-css,mtrgen-json,mtrgen-md,mtrgen-py,mtrgen-cy,mtrgen-rb,mtrgen-js,mtrgen-ts,mtrgen-yaml,mtrgen-toml,mtrgen-latex,mtrgen-lua,mtrgen-properties,mtrgen-shell,mtrgen-dockerfile,mtrgen-sql,mtrgen-groovy,mtrgen-terraform,mtrgen-nginx,mtrgen-systemd,mtrgen-cpp,mtrgen-cisco,mtrgen-java,mtrgen-php,mtrgen-rust,mtrgen-clarity,mtrgen-go",
+        "body": ["--- MTRGEN ---", "name: ${1:name}", "filename: ${2:filename}", "path: ${3:$RELATIVE_FILEPATH}", "--- MTRGEN ---", "$0"]
+    },
+    "if": {
+        "prefix": "if",
+        "description": "If statement block",
+        "body": ["<% if ${1:true} %>", "$0", "<% endif %>"],
+        "scope": "mtrgen,mtrgen-html,mtrgen-xml,mtrgen-css,mtrgen-json,mtrgen-md,mtrgen-py,mtrgen-cy,mtrgen-rb,mtrgen-js,mtrgen-ts,mtrgen-yaml,mtrgen-toml,mtrgen-latex,mtrgen-lua,mtrgen-properties,mtrgen-shell,mtrgen-dockerfile,mtrgen-sql,mtrgen-groovy,mtrgen-terraform,mtrgen-nginx,mtrgen-systemd,mtrgen-cpp,mtrgen-cisco,mtrgen-java,mtrgen-php,mtrgen-rust,mtrgen-clarity,mtrgen-go"
+    }
+}
