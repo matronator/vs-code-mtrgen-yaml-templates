@@ -1,19 +1,21 @@
 --- MTRGEN ---
 name: foo
-filename: <% filename|asf:'lol' %>.js
+filename: <% filename|asf:'asf',3 %>.js
 path: ./folder
 --- MTRGEN ---
 
 var x = 1;
 
-var <% test|asdf:'lol' %>
+var <% test="asdf"|lowerFirst %>
 
 function foo() {
   console.log(x);
   var x = 2;
 }
 
-<% if $var == 'asdf' %>
+const asdf = 'asdf';
+
+<% if $var == 'true' %>
   console.log('asdf');
 <% endif %>
 

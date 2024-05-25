@@ -126,13 +126,19 @@
         "variables": {
             "patterns": [
 				{
-                    "match": "\\<%\\s?([a-zA-Z0-9_]+)(=.+?)?\\|?(([a-zA-Z0-9_]+?)(?:\\:(?:(?:\\\\?\\'|\\\\?\")?.?(?:\\\\?\\'|\\\\?\")?,?)+?)*?)?\\s?%\\>",
+                    "match": "\\<%\\s?([a-zA-Z0-9_]+)((=)(([\\\"'].+?[\\\"'])|.+?))?\\|?((upperFirst|lowerFirst|upper|lower|first|last|kebabCase|pascalCase|titleCase|camelCase|snakeCase|length|reverse|random|truncate|([a-zA-Z0-9_]+?))((:)(?:(?:([\\\"'].+[\\\"'])|([a-zA-Z0-9_]+))?,?)+?)*?)?\\s?%\\>",
                     "name": "variable",
                     "captures": {
                         "1": { "name": "variable.name" },
                         "2": { "name": "variable.other.mtrgen.default" },
-                        "3": { "name": "variable.other.mtrgen.filters" },
-                        "4": { "name": "keyword" }
+                        "3": { "name": "keyword.operator.assignment" },
+                        "4": { "name": "variable.other.mtrgen.default" },
+                        "5": { "name": "string.quoted" },
+                        "7": { "name": "variable.other.constant" },
+                        "8": { "name": "entity.name.function" },
+                        "10": { "name": "punctuation.other.mtrgen" },
+                        "11": { "name": "string.quoted" },
+                        "12": { "name": "parameter" }
                     }
 				}
 			]
