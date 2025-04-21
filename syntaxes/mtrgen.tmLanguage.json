@@ -7,6 +7,16 @@
     "foldingStopMarker": "(<%\\s*(endif)\\s*%>)",
     "patterns": [
         {
+			"begin": "<#-?",
+			"captures": [
+				{
+					"name": "entity.other.mtrgen.delimiter.comment"
+				}
+			],
+			"end": "-?#>",
+			"name": "comment.block.mtrgen"
+		},
+        {
             "include": "variable.template.injection"
         },
         {

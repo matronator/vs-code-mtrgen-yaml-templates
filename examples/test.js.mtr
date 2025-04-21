@@ -9,7 +9,7 @@ var x = 1;
 var <% test="asdf"|lowerFirst %>
 
 function foo() {
-  console.log(x);
+  console.log(x);<# comment #>
   var x = 2;
 }
 
