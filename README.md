@@ -1,6 +1,6 @@
 # MTRGen Templates Syntax Highlighting
 
-This extension provides syntax highlighting to YAML, JSON and NEON files for MTRGen ([matronator/generator](https://github.com/matronator/generator)) templates.
+This extension provides syntax highlighting to template files for MTRGen ([matronator/MTRGen](https://github.com/matronator/MTRGen)) templates.
 
 ## Languages:
 
