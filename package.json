@@ -54,7 +54,9 @@
                     "source.nim",
                     "source.perl",
                     "source.clar",
-                    "text.xml"
+                    "text.xml",
+                    "source.jsx",
+                    "source.tsx"
                 ]
             },
             {
@@ -201,6 +203,16 @@
                 "language": "mtrgen-go",
                 "scopeName": "source.go.mtrgen",
                 "path": "./syntaxes/mtrgen-go.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen-javascriptreact",
+                "scopeName": "source.jsx.mtrgen",
+                "path": "./syntaxes/mtrgen-javascriptreact.tmLanguage.json"
+              },
+              {
+                "language": "mtrgen-typescriptreact",
+                "scopeName": "source.tsx.mtrgen",
+                "path": "./syntaxes/mtrgen-typescriptreact.tmLanguage.json"
               }
         ],
         "languages": [
@@ -608,6 +620,30 @@
                 "extensions": [
                     ".clar.mtr",
                     ".clarity.mtr"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "mtrgen-javascriptreact",
+                "aliases": [
+                    "MTRGen React",
+                    "mtrgen-javascriptreact",
+                    "mtrgen-jsx"
+                ],
+                "extensions": [
+                    ".jsx.mtr"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "mtrgen-typescriptreact",
+                "aliases": [
+                    "MTRGen TypeScript React",
+                    "mtrgen-typescriptreact",
+                    "mtrgen-tsx"
+                ],
+                "extensions": [
+                    ".tsx.mtr"
                 ],
                 "configuration": "./language-configuration.json"
             }

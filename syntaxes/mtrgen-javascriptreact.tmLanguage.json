@@ -1,0 +1,13 @@
+{
+  "name": "mtrgen-javascriptreact",
+  "scopeName": "source.jsx.mtrgen",
+  "comment": "MTRGen React Templates",
+  "patterns": [
+    {
+      "include": "source.mtrgen"
+    },
+    {
+      "include": "source.jsx"
+    }
+  ]
+}

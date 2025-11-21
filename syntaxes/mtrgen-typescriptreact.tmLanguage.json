@@ -1,0 +1,13 @@
+{
+  "name": "mtrgen-typescriptreact",
+  "scopeName": "source.tsx.mtrgen",
+  "comment": "MTRGen TypeScript React Templates",
+  "patterns": [
+    {
+      "include": "source.mtrgen"
+    },
+    {
+      "include": "source.tsx"
+    }
+  ]
+}
