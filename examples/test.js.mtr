@@ -2,7 +2,7 @@
 name: foo
 filename: <% filename|asf:'asf',3 %>.js
 path: ./folder
---- MTRGEN ---
+--- /MTRGEN ---
 
 var x = 1;
 

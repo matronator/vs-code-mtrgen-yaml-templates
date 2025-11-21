@@ -2,7 +2,7 @@
 name: foo
 filename: <% filename|lol:1,3 %>.js
 path: ./folder
---- MTRGEN ---
+--- /MTRGEN ---
 
 var x = 1;
 

@@ -2,58 +2,63 @@
     "scopeName": "variable.template.injection",
     "injectionSelector": "L:source.yaml, L:source.json, L:source.neon, L:source.go, L:source.php, L:source.rust, L:source.js, L:source.ts, L:source.css, L:text.html.basic, L:source.cpp, L:source.haxe, L:source.c, L:source.java, L:source.python, L:source.cython, L:source.shell, L:source.cisco, L:source.dockerfile, L:source.groovy, L:source.lua, L:text.html.markdown, L:source.nginx, L:source.ini, L:source.ruby, L:source.sql, L:source.terraform, L:source.toml, L:source.nim, L:source.perl, L:source.clar, L:text.xml",
     "comment": "MTRGen template",
-    "firstLineMatch": "--- MTRGEN ---",
-    "foldingStartMarker": "(<%-?\\s?(if)\\s?-?%>)",
-    "foldingStopMarker": "(<%-?\\s?(endif)\\s?-?%>)",
+    "firstLineMatch": "\\S+ --- MTRGEN ---.",
+    "foldingStartMarker": "(<%\\s?(if))",
+    "foldingStopMarker": "(<%\\s?(endif)\\s?%>)",
     "patterns": [
         {
-			"begin": "--- MTRGEN ---",
+			"begin": "(<#)(-)?",
             "beginCaptures": {
                 "0": {
-                    "name": "punctuation.definition.header.begin.mtrgen"
+                    "name": "punctuation.definition.comment.mtrgen"
+                },
+                "1": {
+                    "name": "keyword.operator.minus"
                 }
             },
-			"captures": [
-				{
-					"name": "punctuation.definition.header.mtrgen"
-				}
-			],
-			"end": "--- /MTRGEN ---",
-            "endCaptures": {
-                "0": {
-                    "name": "punctuation.definition.header.end.mtrgen"
-                }
-            },
-            "patterns": [
-                {
-                    "match": "^(name|filename|path)(:)\\s*([\\S]+?)$",
-                    "captures": {
-                        "1": { "name": "keyword.mtrgen" },
-                        "2": { "name": "punctuation.separator.key-value.mtrgen" },
-                        "3": { "name": "variable.name.mtrgen" }
-                    }
-                }
-            ],
-			"name": "comment.header.mtrgen"
-		},
-        {
-			"begin": "<#-?",
 			"captures": [
 				{
 					"name": "entity.other.mtrgen.delimiter.comment"
 				}
 			],
-			"end": "-?#>",
+			"end": "(-)?#>",
 			"name": "comment.block.mtrgen"
 		},
-        {
-            "include": "#conditions"
-        },
         {
             "include": "#variables"
         },
         {
             "include": "variable.template.injection"
+        },
+        {
+            "begin": "<%-?",
+            "captures": [
+                {
+                    "name": "variable.entity.other.mtrgen.delimiter"
+                }
+            ],
+            "end": "-?%>",
+            "name": "variable.meta.scope.mtrgen",
+            "patterns": [
+                {
+                    "include": "#expression"
+                }
+            ]
+        },
+        {
+            "begin": "<%-?",
+            "captures": [
+                {
+                    "name": "entity.other.mtrgen.delimiter.tag"
+                }
+            ],
+            "end": "-?%>",
+            "name": "meta.scope.mtrgen.tag",
+            "patterns": [
+                {
+                    "include": "#expression"
+                }
+            ]
         },
         {
 			"begin": "<%",
@@ -85,10 +90,7 @@
 				{
 					"match": "(?i)(?<=\\s)(\\!|/|===|as|and|&&|or|\\|\\||\\+\\+|\\-\\-|==|<=>|>=|<=)\\s?",
 					"name": "keyword.operator.mtrgen"
-				},
-                {
-                    "include": "#string"
-                }
+				}
 			]
 		}
     ],
@@ -107,13 +109,13 @@
         },
         "variables": {
             "patterns": [
-                {
+				{
                     "match": "\\<%\\s?([a-zA-Z0-9_]+)((=)(([\\\"'].+?[\\\"'])|.+?))?\\|?((upperFirst|lowerFirst|upper|lower|first|last|kebabCase|pascalCase|titleCase|camelCase|snakeCase|length|reverse|random|truncate|([a-zA-Z0-9_]+?))((:)(?:(?:([\\\"'].+[\\\"'])|([a-zA-Z0-9_]+))?,?)+?)*?)?\\s?%\\>",
-                    "name": "variable.mtrgen",
+                    "name": "variable",
                     "captures": {
-                        "1": { "name": "variable.name.mtrgen" },
+                        "1": { "name": "variable.name" },
                         "2": { "name": "variable.other.mtrgen.default" },
-                        "3": { "name": "keyword.operator.assignment"  },
+                        "3": { "name": "keyword.operator.assignment" },
                         "4": { "name": "variable.other.mtrgen.default" },
                         "5": { "name": "string.quoted" },
                         "7": { "name": "variable.other.constant" },
@@ -132,9 +134,27 @@
                     "name": "variable.other.mtrgen"
                 },
                 {
-					"match": "\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)\\b",
-					"name": "constant.numeric.mtrgen"
-				},
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.other.mtrgen"
+                        },
+                        "2": {
+                            "name": "variable.other.mtrgen.filter"
+                        }
+                    },
+                    "match": "(\\|)([a-zA-Z_][a-zA-Z0-9_]*)"
+                },
+                {
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.other.mtrgen"
+                        },
+                        "2": {
+                            "name": "variable.other.mtrgen.attribute"
+                        }
+                    },
+                    "match": "(\\.)([a-zA-Z_][a-zA-Z0-9_]*)"
+                },
                 {
                     "begin": "\\[",
                     "captures": [
@@ -178,7 +198,7 @@
                     ]
                 },
                 {
-                    "match": "(\\.|:|,)",
+                    "match": "(\\.|:|\\||,)",
                     "name": "punctuation.other.mtrgen"
                 },
                 {
@@ -190,7 +210,7 @@
                     "name": "keyword.operator.assignment.mtrgen"
                 },
                 {
-                    "match": "\\b(if|endif|else)\\b",
+                    "match": "\\b(if)\\b",
                     "name": "keyword.control.mtrgen"
                 },
                 {
@@ -236,49 +256,39 @@
                             "include": "#string"
                         }
                     ]
+                },
+                {
+                    "begin": "@/",
+                    "beginCaptures": [
+                        {
+                            "name": "punctuation.definition.regexp.begin.mtrgen"
+                        }
+                    ],
+                    "end": "/",
+                    "endCaptures": [
+                        {
+                            "name": "punctuation.definition.regexp.end.mtrgen"
+                        }
+                    ],
+                    "name": "string.regexp.mtrgen",
+                    "patterns": [
+                        {
+                            "include": "#simple_escapes"
+                        }
+                    ]
                 }
             ]
         },
         "conditions": {
             "patterns": [
                 {
-                    "match": "(?<all><%\\s?(?<if>if)\\s(?<condition>(?<negation>!?)(?<left>\\S+?)\\s?(?<right>(?<operator>(?:<=|<|===|==|>=|>|!==|!=))\\s?(?<value>.+?))?)\\s?%>)",
-                    "name": "conditional.block.mtrgen",
+                    "match": "(?<all><%\\s?if\\s(?<condition>(?<negation>!?)(?<left>\\S+?)\\s?(?<right>(?<operator>(?:<=|<|===|==|>=|>|!==|!=))\\s?(?<value>.+?))?)\\s?%>)",
+                    "name": "variable",
                     "captures": {
-                        "if": { "name": "keyword.mtrgen" },
-                        "negation": { "name": "keyword.operator.mtrgen" },
-                        "condition": { "name": "conditional.block.condition.mtrgen" },
-                        "operator": { "name": "keyword.operator.comparison.mtrgen" },
-                        "value": {
-                            "name": "variable.other.mtrgen.value",
-                            "patterns": [
-                                {
-                                    "include": "#expression"
-                                }
-                            ]
-                        },
-                        "left": {
-                            "name": "variable.other.mtrgen.value",
-                            "patterns": [
-                                {
-                                    "include": "#expression"
-                                }
-                            ]
-                        }
-                    }
-                },
-                {
-                    "match": "(<%\\s?else\\s?%>)",
-                    "name": "keyword.mtrgen",
-                    "captures": {
-                        "0": { "name": "conditional.block.else.mtrgen" }
-                    }
-                },
-                {
-                    "match": "(<%\\s?endif\\s?%>)",
-                    "name": "keyword.mtrgen",
-                    "captures": {
-                        "0": { "name": "conditional.block.end.mtrgen" }
+                        "all": { "name": "conditional.block.mtrgen" },
+                        "condition": { "name": "keyword.control" },
+                        "3": { "name": "variable.other.mtrgen.filters" },
+                        "4": { "name": "keyword" }
                     }
                 }
             ]

@@ -1,3 +1,9 @@
+--- MTRGEN ---
+name: name
+filename: filename
+path: examples/sip10.clar.mtr
+--- /MTRGEN ---
+
 ;; sip-010 trait
 ;; use https://explorer.stacks.co/txid/SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE.sip-10-ft-standard
 ;; mainnet: SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE.sip-010-trait
@@ -6,14 +12,21 @@
 (define-trait name
   (
     ;; Transfer from the caller to a new principal
-    (transfer (uint <% asdff|lol %> principal (optional (buff 34))) (response bool uint))
+    (transfer (uint <% asdff|truncate:3,'asd',true %> principal (optional (buff 34))) (response bool uint))
 
     ;; the human readable name of the token
     (get-name () (response (string-ascii 32) uint))
+    <# Comment #>
 
-    <% if $something == 'asdf' %>
+    <% variable="default"|camelCase %>
+    <% var=true %>
+    <% var=120.12 %>
+
+    <% if $something === 'asdf' %>
     ;; the ticker symbol, or empty if none
     (get-symbol () (response (string-ascii 32) uint))
+    <% else %>
+    <% variable=123|func:34,"adl",false %>
     <% endif %>
 
     ;; the ticker symbol, or empty if none
@@ -33,7 +46,7 @@
   )
 )
 
-<% if $assd == 12 %>
+<% if !$asdf %>
 (define-data (asdf)
   (asdf (uint 32))
 )
