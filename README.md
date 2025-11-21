@@ -140,14 +140,18 @@ Default file associations: `.java.mtr`.
 ### MTRGen JavaScript
 
 MTRGen JavaScript templates: system name `mtrgen-js`.
+MTRGen React templates: system name `mtrgen-javascriptreact`.
 
 Default file associations: `.js.mtr`.
+React file associations: `.jsx.mtr`.
 
 ### MTRGen TypeScript
 
 MTRGen TypeScript templates: system name `mtrgen-ts`.
+MTRGen TypeScript React templates: system name `mtrgen-typescriptreact`.
 
 Default file associations: `.ts.mtr`.
+React file associations: `.tsx.mtr`.
 
 ### MTRGen PHP
 
