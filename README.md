@@ -1,5 +1,8 @@
 # MTRGen Templates Syntax Highlighting
 
+> [!WARNING]
+> This extension has been deprecated as of April 19, 2026. Use the [MTRGen Templates Support](https://marketplace.visualstudio.com/items?itemName=matronator.mtrgen-syntax) extension instead.
+
 This extension provides syntax highlighting to template files for MTRGen ([matronator/MTRGen](https://github.com/matronator/MTRGen)) templates.
 
 ## Languages:

@@ -1,17 +1,31 @@
 --- MTRGEN ---
 name: foo
-filename: <% filename|asf:'asf',3 %>.js
+filename: <% $filename|asf:'asf',3 %>.js
 path: ./folder
 --- /MTRGEN ---
 
 var x = 1;
 
-var <% test="asdf"|lowerFirst %>
+var <% $test|upper %>
 
 function foo() {
-  console.log(x);<# comment #>
+  console.log(x);
+  <% $var="sdfsd"|foo %>
+  <# comment #>
   var x = 2;
 }
+
+<% if $adf || ($b == $c && !$d) == true %>
+
+<% endif %>
+
+<% for item in $items %>
+<% first %>
+<% $item %>
+<% endfirst %>
+<% endfor %>
+
+<# comment #>
 
 const asdf = 'asdf';
 

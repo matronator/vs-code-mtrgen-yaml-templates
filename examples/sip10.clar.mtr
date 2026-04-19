@@ -9,24 +9,30 @@ path: examples/sip10.clar.mtr
 ;; mainnet: SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE.sip-010-trait
 ;; testnet: STR8P3RD1EHA8AA37ERSSSZSWKS9T2GYQFGXNA4C.sip-010-trait
 
+<% for map in $maps %>
+<% first %>
+
+<% endfirst %>
+<% endfor %>
+
 (define-trait name
   (
     ;; Transfer from the caller to a new principal
-    (transfer (uint <% asdff|truncate:3,'asd',true %> principal (optional (buff 34))) (response bool uint))
+    (transfer (uint <% $asdff|truncate:3,'asd',true %> principal (optional (buff 34))) (response bool uint))
 
     ;; the human readable name of the token
     (get-name () (response (string-ascii 32) uint))
     <# Comment #>
 
-    <% variable="default"|camelCase %>
-    <% var=true %>
-    <% var=120.12 %>
+    <% $variable="default"|camelCase %>
+    <% $var=true %>
+    <% $var=120.12 %>
 
     <% if $something === 'asdf' %>
     ;; the ticker symbol, or empty if none
     (get-symbol () (response (string-ascii 32) uint))
     <% else %>
-    <% variable=123|func:34,"adl",false %>
+    <% $variable=123|func:34,"adl",false %>
     <% endif %>
 
     ;; the ticker symbol, or empty if none

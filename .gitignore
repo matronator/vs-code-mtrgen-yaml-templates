@@ -2,3 +2,4 @@ node_modules
 *.vsix
 icon.pxm
 .DS_Store
+examples/*
